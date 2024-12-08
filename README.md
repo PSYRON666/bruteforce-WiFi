@@ -11,7 +11,7 @@ This tool must only be used for authorized and ethical purposes, ensuring compli
 
 Here is a demo video showcasing the script in action:
 
-![Demo Video](demo/demo_video.mp4)
+![Demo Video](demo/demo.mp4)
 
 
 ### Version
