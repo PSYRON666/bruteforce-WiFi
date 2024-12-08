@@ -1,160 +1,179 @@
+# 🔐 Brute-Force WiFi 
+![WiFi Password Tester](.github/images/header.png)
+## Brute-Force Password Tester for Windows
 
-# Brute-Force WiFi Password Tester for Windows
+[![Version](https://img.shields.io/badge/version-3.6-blue.svg)](https://github.com/00110111-7/brute-force-WiFi)
+[![Windows](https://img.shields.io/badge/platform-Windows-lightgrey.svg)](https://github.com/00110111-7/brute-force-WiFi)
+[![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-blue.svg)](https://github.com/00110111-7/brute-force-WiFi)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-## Overview
+## 📖 Overview
 
-The Brute-Force WiFi Password Tester for Windows is a PowerShell script meticulously engineered for testing WiFi password security. Designed for ethical hackers, network administrators, and cybersecurity enthusiasts, this script systematically tests WiFi passwords by leveraging customizable parameters, SSID-based password generation, and integrated password lists. While powerful, it is limited by its sequential testing nature and reliance on Windows systems, making it less efficient than professional-grade penetration testing tools.
+A sophisticated PowerShell-based WiFi security testing tool designed for ethical hackers and network administrators. This tool systematically tests WiFi password security through customizable parameters and intelligent password generation.
 
-This tool must only be used for authorized and ethical purposes, ensuring compliance with all applicable laws.
+⚠️ **Important**: Use only for authorized testing and educational purposes.
 
-## Demonstration
+## 🎥 Demonstration
 
-Here is a demo video showcasing the script in action:
+![Demo](demo/demo.gif)
 
-![Demo Video](demo/demo.mp4)
+## 📥 Installation
 
+1. Clone the repository:
+```bash
+git clone https://github.com/00110111-7/brute-force-WiFi.git
+```
 
-### Version
+2. Ensure prerequisites are met:
+   - PowerShell 5.1 or higher
+   - Windows 10/11
+   - Compatible wireless adapter
 
-- **1.0**
+3. Configure PowerShell execution policy:
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
+```
 
-### Tested On
+4. Verify wireless adapter compatibility:
+```powershell
+Get-NetAdapter | Where-Object {$_.MediaType -eq "Native 802.11"}
+```
 
-- Windows 10 LTSC
+## 💻 System Requirements
 
-### Requirements
+- **OS**: Windows 10/11 (64-bit)
+- **RAM**: 4GB minimum (8GB recommended)
+- **Processor**: Dual-core 2GHz or better
+- **PowerShell**: Version 5.1 or higher
+- **Network Adapter**: 802.11ac/ax compatible
+- **Storage**: 100MB free space
+- **Permissions**: Administrator rights
 
-- Windows
-- Admin Rights
-- Wireless Adapter
-- PowerShell
-- Some time
+## ✨ Features
 
-## Features
+### 🔄 Core Features
+- Intelligent password generation algorithms
+- Real-time connection state management
+- Advanced error handling and recovery
+- Memory-optimized operations
+- Detailed logging system
 
-- **Brute-Force Password Testing**:
-  - Systematically generates and tests WiFi passwords against detected networks.
-- **SSID-Based Password Generation**:
-  - Dynamically generates passwords based on detected SSIDs to simulate real-world scenarios.
-- **Common Passwords**:
-  - Automatically tests a predefined set of commonly used passwords.
-- **Custom Password List Support**:
-  - Add your custom password lists via the `lists` folder for extended testing.
-- **Customizable Parameters**:
-  - Users can configure password length, testing limits, separators, and more.
-- **Timeout Management**:
-  - Adjustable timeouts for WiFi network scanning and connection attempts.
-- **Separator Variability**:
-  - Supports passwords with special characters (e.g., `-`, `_`, `.`, `@`, `#`, `$`, `!`).
-- **Logging**:
-  - Creates detailed logs of successful and failed connection attempts for analysis.
-- **Network Interface Detection**:
-  - Automatically detects the appropriate wireless adapter for operations.
+### 🛠️ Technical Capabilities
+- Multi-protocol security testing
+- Signal strength validation
+- Connection state monitoring
+- Custom wordlist support
+- Performance optimization
 
-## Limitations
+### 📊 Monitoring & Analytics
+- Real-time progress tracking
+- Speed and performance metrics
+- Success rate monitoring
+- Detailed test logging
 
-- This tool is designed for Windows environments and lacks the efficiency of professional penetration testing tools.
-- Passwords are tested sequentially, making the process slower compared to parallel testing frameworks.
+## 🚀 Quick Start
 
-## Script Configuration
+1. **Run as Administrator**:
+```powershell
+powershell -ExecutionPolicy Bypass -File .\Brute-Force-WiFi.ps1
+```
 
-The script uses a `$CONFIG` block for customization. Here is a detailed overview of the parameters:
+2. **Select Network Adapter**:
+```
+[0] Intel(R) Wireless-AC 9560
+    MAC: 00:11:22:33:44:55
+    GUID: {XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX}
+```
 
-| Parameter           | Description                                                                   | Default Value                         |
-| ------------------- | ----------------------------------------------------------------------------- | ------------------------------------- |
-| `PasswordLength`    | Specifies the length of passwords to generate and test.                       | `8`                                   |
-| `MaxPasswords`      | Defines the maximum number of passwords to attempt during a session.          | `100000`                              |
-| `Interface`         | Holds the name of the active wireless adapter.                                | `null`                                |
-| `InterfaceGUID`     | Stores the GUID of the wireless adapter.                                      | `null`                                |
-| `ScanTimeout`       | Duration (in seconds) allocated for scanning WiFi networks.                   | `10`                                  |
-| `ConnectionTimeout` | Time (in seconds) allowed for each connection attempt.                        | `3`                                   |
-| `Separators`        | Array of special characters to include in password generation.                | `("-", "_", ".", "@", "#", "$", "!")` |
-| `LogDirectory`      | Directory for saving logs. Defaults to the script root or system temp folder. | Script root or temp path              |
+3. **Choose Target Network**:
+```
+Available Networks:
+==================
+[0] TargetNetwork_5G
+    Signal: 85% | Security: WPA2-Personal
+```
 
-## Usage Instructions
+## ⚙️ Advanced Configuration
 
-### 1. Prerequisites
+```powershell
+$CONFIG = @{
+    PasswordLength = 8            # Minimum password length
+    MaxPasswords = 100000        # Maximum passwords to test
+    ScanTimeout = 10            # Network scan timeout (seconds)
+    ConnectionTimeout = 3       # Connection attempt timeout
+    RetryAttempts = 0          # Number of retry attempts
+    ScanDelaySeconds = 3       # Delay between scans
+    MinSignalStrength = 20     # Minimum signal strength required
+    DebugMode = $false         # Enable detailed logging
+}
+```
 
-Before running the script, ensure:
+## 🔒 Supported Security Protocols
 
-- You have administrative rights.
-- A functional wireless adapter is connected and operational.
-- PowerShell script execution is enabled (`Set-ExecutionPolicy Unrestricted`).
+- WPA2-Personal (AES/TKIP)
+- WPA3-Personal
+- WPA-Personal
+- Mixed Mode (WPA2/WPA3)
+- Enterprise modes (limited support)
 
-### 2. Running the Script
+## 📝 Logging System
 
-Follow these steps to execute the script:
+### Log Levels
+- `INFO`: General operations
+- `DEBUG`: Detailed debugging
+- `ERROR`: Error tracking
+- `SUCCESS`: Successful attempts
 
-1. Launch PowerShell as an administrator.
-2. Navigate to the script’s directory.
-3. Execute the script with:
-   ```powershell
-   .\BruteforceWiFiPasswordTester.ps1
-   ```
+### Log Files
+- `scan_[timestamp].log`: Main operation log
+- `debug_[timestamp].log`: Detailed debug information
+- `success_[timestamp].txt`: Successful password finds
+- `wrong_passwords.txt`: Failed attempts
 
-### 3. Using the Common Password File
+## 🔧 Troubleshooting
 
-The `common-password.txt` file is included as part of the script's resources. It contains a list of commonly used passwords. To use this file:
+### Common Issues
+1. **Connection Failures**
+   - Verify adapter compatibility
+   - Check signal strength
+   - Ensure correct security type
 
-- Ensure the file is located in the script directory.
-- The script will automatically prioritize these passwords during brute-force attempts before proceeding to custom-generated or list-based passwords.
+2. **Performance Issues**
+   - Close competing WiFi applications
+   - Verify system resources
+   - Check adapter drivers
 
-### 4. Adding Custom Password Lists
+3. **Adapter Problems**
+   - Update wireless drivers
+   - Verify Windows compatibility
+   - Check physical connections
 
-To extend functionality with additional passwords:
+## 🚀 Performance Optimization
 
-- Place your custom password files in the `lists` folder.
-- Files must be in plain text format, with each password on a new line.
-- During execution, the script will iterate through all files in the `lists` folder and include them in the testing process after exhausting the `common-password.txt` file.
+- Real-time connection state management
+- Memory-efficient password testing
+- Process priority optimization
+- Intelligent retry mechanisms
+- Optimized scanning algorithms
 
-### 5. Customizing Parameters
+## ⚠️ Limitations
 
-Update the `$CONFIG` block in the script to:
+- Windows-only support
+- Sequential testing only
+- Adapter-dependent performance
+- Limited enterprise protocol support
+- Memory constraints for large wordlists
 
-- Adjust password lengths and the number of attempts.
-- Set scan and connection timeouts.
-- Specify a directory for log files.
+## 🔗 Related Projects
 
-### 6. Logs
+- [WiFi Analyzer Tools](https://github.com/topics/wifi-analyzer)
+- [Network Security Tools](https://github.com/topics/network-security)
+- [Wireless Testing Tools](https://github.com/topics/wireless-testing)
 
-The script generates logs for:
+## 📜 License
 
-- **Successful Connections**: Logs details of passwords that successfully connect to networks.
-- **Failed Attempts**: Records passwords and error messages for unsuccessful attempts.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-Logs are stored in the `LogDirectory`. If undefined, the default is the script root or the system temp directory.
+## 🏷️ Tags
 
-## Ethical Use and Warnings
-
-- **Legal Compliance**: Use only with explicit permission from the network owner. Unauthorized use is illegal and punishable by law.
-- **Educational and Security Testing Only**: Designed to demonstrate the importance of strong WiFi passwords and aid in authorized security audits.
-
-## Troubleshooting
-
-### Common Issues and Fixes
-
-- **Wireless Adapter Not Recognized**:
-  - Ensure the adapter is enabled and supported by your system.
-  - Update drivers to the latest version.
-- **Script Blocked by Execution Policy**:
-  - Set the PowerShell execution policy using:
-    ```powershell
-    Set-ExecutionPolicy Unrestricted
-    ```
-- **Insufficient Permissions**:
-  - Always run PowerShell as an administrator.
-
-## Contributions
-
-Contributions are welcome! Submit feature requests, improvements, or bug fixes while adhering to ethical hacking principles.
-
-## Disclaimer
-
-This tool is strictly for authorized network security testing and educational purposes. Misuse is prohibited, and the author disclaims all liability for illegal or unethical use.
-
----
-
-### Tags
-
-`WiFi Tester` `Wlan Tester` `Brute Force Passwords` `SSID Password Testing` `Windows WiFi Cracking` `Cybersecurity Tool` `PowerShell WiFi Script` `WiFi Security Audit` `Password List`
-
+`#WiFiSecurity` `#NetworkTesting` `#PowerShell` `#EthicalHacking` `#CyberSecurity` `#PenTesting` `#WindowsTools` `#NetworkAudit` `#WPA2` `#WPA3` `#WiFi` `#WLAN` `wifi-analyzer` `network-security` `wireless-testing` `wireless` 
