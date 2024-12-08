@@ -2,7 +2,7 @@
 ![WiFi Password Tester](.github/images/header.png)
 ## Brute-Force Password Tester for Windows
 
-[![Version](https://img.shields.io/badge/version-3.6-blue.svg)](https://github.com/00110111-7/brute-force-WiFi)
+[![Version](https://img.shields.io/badge/version-1.0-blue.svg)](https://github.com/00110111-7/brute-force-WiFi)
 [![Windows](https://img.shields.io/badge/platform-Windows-lightgrey.svg)](https://github.com/00110111-7/brute-force-WiFi)
 [![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-blue.svg)](https://github.com/00110111-7/brute-force-WiFi)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
