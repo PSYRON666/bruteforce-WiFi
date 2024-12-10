@@ -21,7 +21,7 @@ A sophisticated PowerShell-based WiFi security testing tool designed for ethical
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/00110111-7/brute-force-WiFi.git
+git clone https://github.com/EOF7/brute-force-WiFi.git
 ```
 
 2. Ensure prerequisites are met:
