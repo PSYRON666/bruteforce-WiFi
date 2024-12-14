@@ -75,7 +75,7 @@ Get-NetAdapter | Where-Object {$_.MediaType -eq "Native 802.11"}
 
 1. **Run as Administrator**:
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\Bruteforce-WiFi.ps1
+powershell -ExecutionPolicy Bypass -File .\bruteforce-WiFi.ps1
 ```
 
 2. **Select Network Adapter**:
