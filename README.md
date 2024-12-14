@@ -1,10 +1,10 @@
-# 🔐 Brute-Force WiFi 
+# 🔐 Bruteforce WiFi 
 ![WiFi Password Tester](.github/images/header.png)
-## Brute-Force Password Tester for Windows
+## Bruteforce Password Tester for Windows
 
-[![Version](https://img.shields.io/badge/version-1.0-blue.svg)](https://github.com/00110111-7/brute-force-WiFi)
-[![Windows](https://img.shields.io/badge/platform-Windows-lightgrey.svg)](https://github.com/00110111-7/brute-force-WiFi)
-[![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-blue.svg)](https://github.com/00110111-7/brute-force-WiFi)
+[![Version](https://img.shields.io/badge/version-1.0-blue.svg)](https://github.com/EOF7/bruteforce-WiFi)
+[![Windows](https://img.shields.io/badge/platform-Windows-lightgrey.svg)](https://github.com/EOF7/bruteforce-WiFi)
+[![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-blue.svg)](https://github.com/EOF7/bruteforce-WiFi)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 ## 📖 Overview
@@ -21,7 +21,7 @@ A sophisticated PowerShell-based WiFi security testing tool designed for ethical
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/EOF7/brute-force-WiFi.git
+git clone https://github.com/EOF7/bruteforce-WiFi.git
 ```
 
 2. Ensure prerequisites are met:
@@ -75,7 +75,7 @@ Get-NetAdapter | Where-Object {$_.MediaType -eq "Native 802.11"}
 
 1. **Run as Administrator**:
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\Brute-Force-WiFi.ps1
+powershell -ExecutionPolicy Bypass -File .\Bruteforce-WiFi.ps1
 ```
 
 2. **Select Network Adapter**:
@@ -176,4 +176,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🏷️ Tags
 
-`#WiFiSecurity` `#NetworkTesting` `#PowerShell` `#EthicalHacking` `#CyberSecurity` `#PenTesting` `#WindowsTools` `#NetworkAudit` `#WPA2` `#WPA3` `#WiFi` `#WLAN` `wifi-analyzer` `network-security` `wireless-testing` `wireless` 
+`#WiFiSecurity` `#NetworkTesting` `#PowerShell` `#EthicalHacking` `#CyberSecurity` `#PenTesting` `#WindowsTools` `#NetworkAudit` `#WPA2` `#WPA3` `#WiFi` `#WLAN` `#wifi-analyzer` `#network-security` `#wireless-testing` `#wireless` `#bruteforce` `#brute-force` `#passwords` `#password-list`  `#wlan-hack`  `#wifi-hack`  `#windows`  `#windows-powershell`    
