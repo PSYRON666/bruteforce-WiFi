@@ -272,7 +272,7 @@ function Get-NormalizedSSID {
 function Select-NetworkAdapter {
     try {
         # Get all wireless adapters that support 802.11
-        $adapters = Get-NetAdapter | Where-Object { 
+        $adapters = @(Get-NetAdapter | Where-Object { 
             $_.MediaType -eq "Native 802.11" -or $_.MediaType -eq "802.11"
         } | ForEach-Object {
             $guid = (Get-NetAdapter -Name $_.Name).InterfaceGuid
@@ -283,7 +283,7 @@ function Select-NetworkAdapter {
                 MacAddress = $_.MacAddress
                 GUID = $guid
             }
-        }
+        })
 
         if (-not $adapters -or $adapters.Count -eq 0) {
             Write-Host "`nNo wireless adapters found or all adapters are disabled!" -ForegroundColor Red
